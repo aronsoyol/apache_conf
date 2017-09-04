@@ -8,3 +8,9 @@ directives which depend on, say, mod_perl being loaded, ensure that
 these are placed in a filename later in the sort order than "perl.conf".
 
 wsgi.conf
+# wsgi での注意：
+
+1. mod_wsigのpythonバージョンとsystem のpythonバージョンを一致させる、あるいはWSGIPythonHomeでpythonを指定する
+
+2. pythonはユーザのホームディレクトリー下にあると権限のエラーが生じる、例えばpyenvでpythonをインストールすると/home/user/.pyenv/*になる。これが良くないので例えば以下のようなdirのしたにインストールする。
+/opt/loval/pyenv/***
